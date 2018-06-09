@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "sdl.h": "c",
+        "sfont.h": "c",
+        "sdl_image.h": "c",
+        "sdl_main.h": "c",
+        "sdl_stdinc.h": "c"
+    }
+}

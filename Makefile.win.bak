@@ -1,0 +1,35 @@
+# Project: Tetris
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = PROJET~1_private.res
+OBJ  = main.o "../../../../../../CPI 1 ère année/Sergueï/Phi/Tetris/Archives Tetris stables/Projet Tetris/SFont.o" $(RES)
+LINKOBJ  = main.o "../../../../../../CPI 1 ère année/Sergueï/Phi/Tetris/Archives Tetris stables/Projet Tetris/SFont.o" $(RES)
+LIBS =  -L"C:/Program Files/Dev-Cpp/lib" -lmingw32 -lSDLmain -lSDL -lSDL_image -lSFont  
+INCS =  -I"C:/Program Files/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Program Files/Dev-Cpp/include/c++/3.3.1"  -I"C:/Program Files/Dev-Cpp/include/c++/3.3.1/mingw32"  -I"C:/Program Files/Dev-Cpp/include/c++/3.3.1/backward"  -I"C:/Program Files/Dev-Cpp/lib/gcc-lib/mingw32/3.3.1/include"  -I"C:/Program Files/Dev-Cpp/include" 
+BIN  = PROJET~1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before PROJET~1.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "PROJET~1.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+"../../../../../../CPI 1 ère année/Sergueï/Phi/Tetris/Archives Tetris stables/Projet Tetris/SFont.o": ../../../../../../CPI\ 1\ ère\ année/Sergueï/Phi/Tetris/Archives\ Tetris\ stables/Projet\ Tetris/SFont.c
+	$(CC) -c "../../../../../../CPI 1 ère année/Sergueï/Phi/Tetris/Archives Tetris stables/Projet Tetris/SFont.c" -o "../../../../../../CPI 1 ère année/Sergueï/Phi/Tetris/Archives Tetris stables/Projet Tetris/SFont.o" $(CFLAGS)
+
+PROJET~1_private.res: PROJET~1_private.rc 
+	$(WINDRES) -i PROJET~1_private.rc -I rc -o PROJET~1_private.res -O coff 
